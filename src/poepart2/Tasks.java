@@ -10,34 +10,23 @@ package poepart2;
  */
 public class Tasks 
 {
-    private String taskName;
-    private int taskNumber;
-    private String taskDescription;
-    private String developerDetails;
-    private int taskDuration;
-    private String taskID;
-    private String taskStatus;
-    
-    
-public Tasks(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskID, String taskStatus) {
-        this.taskName = taskName;
-        this.taskNumber = taskNumber;
-        this.taskDescription = taskDescription;
-        this.developerDetails = developerDetails;
-        this.taskDuration = taskDuration;
-        this.taskID = taskID;
-        this.taskStatus = taskStatus; 
 
-}
-
-public String toString() {
-        return "Task Number: " + taskNumber + "\n" +
-               "Task Name: " + taskName + "\n" +
-               "Task Description: " + taskDescription + "\n" +
-               "Developer Details: " + developerDetails + "\n" +
-               "Task Duration: " + taskDuration + " hours\n" +
-               "Task ID: " + taskID + "\n" +
-               "Task Status: " + taskStatus + "\n";
+    public Tasks(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskID, String taskStatus) {
     }
 
+ public static boolean checkTaskDescription(String taskDescription) {
+        return taskDescription != null && taskDescription.length() <= 50;
+    }   
+
+    static void add(Tasks tasks) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+   
+    
+
+
 }
+
+
+

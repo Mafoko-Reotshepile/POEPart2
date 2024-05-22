@@ -24,7 +24,7 @@ private String taskStatus;
     public static void main(String[] args) 
     {
       Menu();
-      //Tasks obj = new Tasks();
+    //Tasks obj = new Tasks();
      
       
     }
@@ -61,13 +61,17 @@ private String taskStatus;
             try {
                 int numTasks = Integer.parseInt(numTasksStr);
                 for (int i = 0; i < numTasks; i++) {
-                    String task = JOptionPane.showInputDialog("Enter task " + (i + 1) + ":");
-                    if (task != null && !task.isEmpty()) {
-                        tasks.add(task);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Task cannot be empty. Try again.");
-                        i--; // Decrement to retry entering this task
-                    }
+                   String taskName = JOptionPane.showInputDialog("Enter task name:");
+                    int taskNumber = i + 1;
+                    String taskDescription = JOptionPane.showInputDialog("Enter task description:");
+                    String developerDetails = JOptionPane.showInputDialog("Enter developer details:");
+                    String taskDurationStr = JOptionPane.showInputDialog("Enter task duration (in hours):");
+                    int taskDuration = Integer.parseInt(taskDurationStr);
+                    String taskID = JOptionPane.showInputDialog("Enter task ID:");
+                    String taskStatus = JOptionPane.showInputDialog("Enter task status:");
+                    Tasks Obj = new Tasks(taskName, taskNumber, taskDescription, developerDetails, taskDuration, taskID, taskStatus);
+                    Tasks tasks = new Tasks(taskName, taskNumber, taskDescription, developerDetails, taskDuration, taskID, taskStatus);
+                    Tasks.add(tasks);
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Invalid number. Please enter a valid integer.");
@@ -80,8 +84,8 @@ private String taskStatus;
             JOptionPane.showMessageDialog(null, "No tasks entered yet.");
         } else {
             StringBuilder report = new StringBuilder("Tasks Report:\n");
-            for (int i = 0; i < tasks.size(); i++) {
-                report.append((i + 1)).append(". ").append(tasks.get(i)).append("\n");
+            for (String Task : tasks) {
+                report.append(Task.toString()).append("\n");
             }
             JOptionPane.showMessageDialog(null, report.toString());
         }
@@ -108,6 +112,24 @@ private String taskStatus;
                "Task ID: " + taskID + "\n" +
                "Task Status: " + taskStatus + "\n";
     }
+    
+    public String createTaskID() {
+        String taskNameInitials = getInitials(taskName);
+        String developerInitials = getInitials(developerDetails);
+        return taskNumber + taskNameInitials + developerInitials;
+    }
+
+    private String getInitials(String input) {
+        StringBuilder initials = new StringBuilder();
+        for (String part : input.split(" ")) {
+            if (!part.isEmpty()) {
+                initials.append(part.charAt(0));
+            }
+        }
+        return initials.toString().toUpperCase();
+    }
+    
+    
 
     
 }
