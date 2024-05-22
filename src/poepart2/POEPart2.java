@@ -15,8 +15,32 @@ public class POEPart2 {
      */
     public static void main(String[] args) 
     {
-        
+      Menu();
+     
       
     }
     
-}
+    public static void Menu()
+    {
+      String[] options = {"Option 1)"+ "Add Task", "Option 2)"+"Show Report", "Quit"};
+        
+        while (true) {
+            String input = (String) JOptionPane.showInputDialog(null, 
+                "Choose an option:", 
+                "Numeric Menu", 
+                JOptionPane.PLAIN_MESSAGE, 
+                null, 
+                options, 
+                options[0]);
+            
+            if (input == null || input.equals("Quit")) {
+                JOptionPane.showMessageDialog(null, "Exiting program.");
+                break;
+            } else {
+                JOptionPane.showMessageDialog(null, "You selected: " + input);
+            }
+        }
+    } 
+    
+    }
+
