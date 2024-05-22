@@ -35,14 +35,6 @@ public class POEPart2 {
                 null, 
                 options, 
                 options[0]);
-            
-           /* if (input == null || input.equals("Quit")) {
-                JOptionPane.showMessageDialog(null, "Exiting program.");
-                break;
-            } else {
-                JOptionPane.showMessageDialog(null, "You selected: " + input);
-            }
-        }*/
            
            if (input == null || input.equals("Quit")) {
                 JOptionPane.showMessageDialog(null, "Exiting program.");
@@ -77,5 +69,17 @@ public class POEPart2 {
         }
     }
     
+    public static void showReport() {
+        if (tasks.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No tasks entered yet.");
+        } else {
+            StringBuilder report = new StringBuilder("Tasks Report:\n");
+            for (int i = 0; i < tasks.size(); i++) {
+                report.append((i + 1)).append(". ").append(tasks.get(i)).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, report.toString());
+        }
+    }
 }
+    
 
