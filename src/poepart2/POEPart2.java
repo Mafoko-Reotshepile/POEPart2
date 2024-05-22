@@ -86,7 +86,29 @@ private String taskStatus;
             JOptionPane.showMessageDialog(null, report.toString());
         }
     }
+    public POEPart2(String taskName, int taskNumber, String taskDescription, String developerDetails, int taskDuration, String taskID, String taskStatus) 
+    {
+        this.taskName = taskName;
+        this.taskNumber = taskNumber;
+        this.taskDescription = taskDescription;
+        this.developerDetails = developerDetails;
+        this.taskDuration = taskDuration;
+        this.taskID = taskID;
+        this.taskStatus = taskStatus; 
+
+    }
     
+    public String toString() 
+    {
+        return "Task Number: " + taskNumber + "\n" +
+               "Task Name: " + taskName + "\n" +
+               "Task Description: " + taskDescription + "\n" +
+               "Developer Details: " + developerDetails + "\n" +
+               "Task Duration: " + taskDuration + " hours\n" +
+               "Task ID: " + taskID + "\n" +
+               "Task Status: " + taskStatus + "\n";
+    }
+
     
 }
     
