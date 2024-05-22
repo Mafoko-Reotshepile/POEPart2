@@ -11,14 +11,20 @@ import java.util.ArrayList;
  */
 public class POEPart2 {
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    private static ArrayList<String> tasks = new ArrayList<>();
+private static ArrayList<String> tasks = new ArrayList<>();
+private String taskName;
+private int taskNumber;
+private String taskDescription;
+private String developerDetails;
+private int taskDuration;
+private String taskID;
+private String taskStatus;
+
+
     public static void main(String[] args) 
     {
       Menu();
+      //Tasks obj = new Tasks();
      
       
     }
@@ -80,6 +86,8 @@ public class POEPart2 {
             JOptionPane.showMessageDialog(null, report.toString());
         }
     }
+    
+    
 }
     
 
